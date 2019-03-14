@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 28 fév. 2019 à 18:51
--- Version du serveur :  5.7.24
--- Version de PHP :  7.2.14
+-- Généré le :  jeu. 21 fév. 2019 à 18:34
+-- Version du serveur :  5.7.23
+-- Version de PHP :  7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `absence`;
 CREATE TABLE IF NOT EXISTS `absence` (
   `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `Date_absence` date NOT NULL,
+  `Date` date NOT NULL,
   `etudiants_id` int(10) UNSIGNED DEFAULT NULL,
   `professeurs_id` int(10) UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`ID`),
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `absence` (
 -- Déchargement des données de la table `absence`
 --
 
-INSERT INTO `absence` (`ID`, `Date_absence`, `etudiants_id`, `professeurs_id`) VALUES
+INSERT INTO `absence` (`ID`, `Date`, `etudiants_id`, `professeurs_id`) VALUES
 (1, '2019-02-21', 1, NULL),
 (2, '2019-02-20', NULL, 1);
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `classe` (
   PRIMARY KEY (`ID`),
   KEY `ID` (`ID`),
   KEY `ID_2` (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `classe`
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `direction` (
   PRIMARY KEY (`ID`),
   KEY `IDProf` (`IDProf`),
   KEY `IDeleve` (`IDeleve`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `direction`
@@ -185,7 +185,7 @@ CREATE TABLE IF NOT EXISTS `professeurs` (
   KEY `PresProf_2` (`PresProf`),
   KEY `Classe_2` (`Classe`),
   KEY `ID` (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `professeurs`
